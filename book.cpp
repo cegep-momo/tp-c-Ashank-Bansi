@@ -41,7 +41,6 @@ void Book::returnBook(){
     borrowerName.clear();
 }
 
-
 string Book::toString() const {
     string result = "Titre: " + title + 
                     "\nAuteur: " + author + 
