@@ -152,11 +152,23 @@ void Library::displayAllBooks() {
         cout << "Aucun livre dans la bibliothèque.\n";
         return;
     }
-    
+
+    // Creation vecteur temp (pointeur pour le tri)
+    std::vector<Book*> livresTries;
+    for (const auto& item : books) {
+        livresTries.push_back(item.get());
+    }
+
+    // tri avec std (sort par titre du livre)
+    std::sort(livresTries.begin(), livresTries.end(), [](Book* a, Book* b) {
+        return a->getTitle() < b->getTitle();
+    });
+
+    // affichage
     cout << "\n=== TOUS LES LIVRES ===\n";
-    for (size_t i = 0; i < books.size(); ++i) {
+    for (size_t i = 0; i < livresTries.size(); ++i) {
         cout << "\nLivre " << (i + 1) << " :\n";
-        cout << books[i]->toString() << "\n";
+        cout << livresTries[i]->toString() << "\n";
         cout << "-------------------------\n";
     }
 }
