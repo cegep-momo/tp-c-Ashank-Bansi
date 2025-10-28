@@ -155,8 +155,8 @@ void Library::displayAllBooks() {
 
     // Creation vecteur temp (pointeur pour le tri)
     std::vector<Book*> livresTries;
-    for (const auto& item : books) {
-        livresTries.push_back(item.get());
+    for (const auto& ptr : books) {
+        livresTries.push_back(ptr.get());
     }
 
     // tri avec std (sort par titre du livre)
