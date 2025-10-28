@@ -23,7 +23,7 @@ Expliquez en détails une fonctionnalité / notion dans le code que ne nous avon
 Dans ma méthode d’affichage, tous les livres de la bibliothèque sont stockés dans un vecteur. J’utilise donc des 
 "pointer", qui sont des pointeurs intelligents modernes en C++. Cela veut dire que je ne m’occupe jamais de
 libérer la mémoire, c’est fait automatiquement dès que le livre n’est plus utilisé ou retiré du vecteur.Dans la 
-boucle for dans library.cpp (méthode displayAllBooks), chaque "item" (C'est comme ca que je l'ai nommé) est un 
+boucle for dans library.cpp (méthode displayAllBooks), chaque "ptr" (C'est comme ca que je l'ai nommé) est un 
 pointer vers un Book (livre). Pour trier et afficher, j’utilise get() afin d’obtenir un pointeur brut juste pour 
 cette opération temporaire.Grâce au pointer (unique_ptr), mon code est plus simple à écrire et sûr. Il n’y a pas 
 de “delete”, pas de risque d’oublier de libérer la mémoire. C’est pratique et efficace pour la gestion de tous mes 
